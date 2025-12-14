@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://luxqx4bgvl8k"]
+
+[ext_resource type="PackedScene" uid="uid://h2vsxler8tin" path="res://player.tscn" id="1_jq6gy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rj4so"]
+albedo_color = Color(0.392744, 0.176692, 0.101758, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jq6gy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(20, 0.5, 20)
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75304, 0)
+use_collision = true
+size = Vector3(10, 3, 0.5)
+material = SubResource("StandardMaterial3D_rj4so")
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0519177, 0.998651, 0, -0.998651, -0.0519177, -7.94569, 11.4015, 6.80542)
+shadow_enabled = true
+shadow_bias = 0.57
+shadow_normal_bias = 4.489
+shadow_transmittance_bias = 1.0
+
+[node name="World" type="WorldEnvironment" parent="."]
+camera_attributes = SubResource("CameraAttributesPractical_jq6gy")
+
+[node name="Player" parent="." instance=ExtResource("1_jq6gy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2483, -4.4075)
