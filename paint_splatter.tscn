@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://daiwififgsptg"]
+
+[ext_resource type="Script" uid="uid://bfub58y00fuy1" path="res://scripts/paint_splatter.gd" id="1_x5n68"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x5n68"]
+
+[node name="PaintSplatter" type="Decal"]
+texture_albedo = SubResource("NoiseTexture2D_x5n68")
+script = ExtResource("1_x5n68")
